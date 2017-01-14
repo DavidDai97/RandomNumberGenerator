@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.android.randomnumbergenerater.MainActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:id="@+id/Welcome_Word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="欢迎来到随机数生成器"
+                android:textColor="@android:color/black"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/Developer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/Welcome_Word"
+                android:layout_below="@id/Welcome_Word"
+                android:layout_marginBottom="48dp"
+                android:text="----由DavidDai开发"
+                android:textSize="28sp" />
+
+            <FrameLayout
+                android:id="@+id/TextFrame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Developer"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="最小数字"
+                    android:textColor="#000000"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="最大数字"
+                    android:textColor="#000000"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="生成个数"
+                    android:textColor="#000000"
+                    android:textSize="25dp" />
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/TextFrame"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="32dp"
+                android:text="重置"
+                android:textSize="25sp"
+                android:onClick="resetAll"/>
+
+            <ImageButton
+                android:id="@+id/settings"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_above="@id/TextFrame"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@id/Developer"
+                android:background="@android:color/transparent"
+                android:onClick="settings"
+                android:scaleType="centerCrop"/>
+
+            <FrameLayout
+                android:id="@+id/EditBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TextFrame"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:padding="16dp">
+
+                <EditText
+                    android:id="@+id/lowerBound"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+                <EditText
+                    android:id="@+id/upperBound"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+                <EditText
+                    android:id="@+id/numberToGenerate"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/AnswerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/EditBox"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:text="生成的随机数为"
+                android:textAlignment="center"
+                android:textSize="25dp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/AnswerBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/AnswerText"
+                android:layout_margin="16dp"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="34sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/AnswerBox"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:onClick="submitGeneration"
+                android:text="生成随机数"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>
